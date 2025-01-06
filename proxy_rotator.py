@@ -1,15 +1,15 @@
 import requests
 import time
 
-# path to proxy file (make sure it's correct)
-proxy_file = 'C:/Users/almei/Downloads/proxies/http.txt'
+# path to proxy file (make sure it's ur user)
+proxy_file = 'C:/Users/test/Downloads/proxies/http.txt'
 
 # Read proxies from file
 def read_proxies():
     with open(proxy_file, 'r') as f:
         return [line.strip() for line in f if line.strip()]
 
-# Test if proxy works
+# test it
 def test_proxy(proxy):
     url = 'http://httpbin.org/ip'  # check with this url
     print(f"Trying {proxy}")
@@ -24,7 +24,7 @@ def test_proxy(proxy):
     
     return False
 
-# Rotate through proxies
+# Rotate proxies
 def rotate_proxies():
     proxies = read_proxies()
     if not proxies:
